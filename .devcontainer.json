@@ -1,0 +1,23 @@
+{
+    "name": "Fedora Development Environment",
+    "image": "fedora:latest",
+    
+    // Add any features you need
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+
+    // Configure tool-specific properties
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-typescript-tslint-plugin",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+
+    // Use 'postCreateCommand' to run commands after the container is created
+    "postCreateCommand": "dnf update -y && dnf install -y gcc gcc-c++ make"
+} 
